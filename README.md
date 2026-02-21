@@ -33,6 +33,37 @@ This project demonstrates:
 ---
 
 ## Project Structure
+```
+├── app
+│   ├── api
+│   │   └── axiosClinet.ts
+│   ├── app.css
+│   ├── components
+│   │   ├── Menu.tsx
+│   │   ├── NavBar.tsx
+│   │   └── WeatherCard.tsx
+│   ├── hooks
+│   │   └── useWeather.ts
+│   ├── root.tsx
+│   ├── routes
+│   │   ├── home.tsx
+│   │   ├── index.tsx
+│   │   └── today.tsx
+│   ├── routes.ts
+│   └── welcome
+│       └── welcome.tsx
+├── Dockerfile
+├── package.json
+├── package-lock.json
+├── public
+│   ├── favicon.ico
+│   └── soleil.png
+├── react-router.config.ts
+├── README.md
+├── tsconfig.json
+└── vite.config.ts
+
+```
 
 
 
