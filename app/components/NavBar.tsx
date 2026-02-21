@@ -12,13 +12,13 @@ export default  function  NavBar(){
     const [input,setInput]=useState("");
     
   return (
-    <div className='flex justify-between  '>
+    <div className='flex justify-between bg-gray-200 w-full rounded-lg p-2 ml-3 pr-55'>
         
    
          
  
      
-        <div className=' flex relative w-fill max-w-wd flex flex-row mr-50  justify-between'>
+        <div className=' flex relative w-full flex flex-row mr-50 pl-80 justify-center items-center'>
             <input
             placeholder='Search for a city...'
             value={input}
