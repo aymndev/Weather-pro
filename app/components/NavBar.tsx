@@ -17,11 +17,7 @@ export default  function  NavBar(){
    
          
  
-        <div className='flex items-center ml-50'>
-            <h1 className='text-xl font-bold '>Weather</h1>
-            
-
-        </div>
+     
         <div className=' flex relative w-fill max-w-wd flex flex-row mr-50  justify-between'>
             <input
             placeholder='Search for a city...'
