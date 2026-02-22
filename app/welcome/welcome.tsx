@@ -1,5 +1,5 @@
 import NavBar from "~/components/NavBar";
-import WeatherCard from "~/components/WeatherCard";
+import WeatherCard from "~/components/WeatherIcon";
 
 import Menu from "~/components/Menu";
 

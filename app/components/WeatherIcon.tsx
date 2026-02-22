@@ -1,5 +1,7 @@
+import WeatherIcon from "./WeatherIcon";
 export default function WeatherCard({ weather }: any) {
     if (!weather) return <p>Loading...</p>;
+    const icon = weather?.weather?.[0]?.icon;
     return (
         <div className="flex  justify-center text-black ">
             <div className="flex flex-col bg-gray-100  h-80 w-[70%] p-5 font-bold  border-1  rounded-lg">
@@ -13,7 +15,8 @@ export default function WeatherCard({ weather }: any) {
                     <div className="flex flex-row p-5  ">
                         <p className="text-xl pt-2">{Math.round(weather?.main?.temp)} °C</p>
 
-                        <img className="h-10 w-10 ml-10 mb-6" src="/soleil.png" height={1} width={40} />
+                        {/*<img className="h-10 w-10 ml-10 mb-6" src="/soleil.png" height={1} width={40} />*/}
+                        <WeatherIcon icon={icon} />
                     </div>
                     <div className="flex flex-row gap-20 pl-5">
                         <Stat title="Wind Speed" value={`${weather?.wind?.speed} km/h`} />

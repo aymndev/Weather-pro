@@ -1,11 +1,13 @@
-import WeatherCard from "~/components/WeatherCard";
+import WeatherCard from "~/components/WeatherIcon";
 
 import { useWeather } from "~/hooks/useWeather";
 
 
 export default function Today() {
-  const { data, loading } = useWeather("/weather?q=London&units=metric");
+  const { data, loading, error } =
+  useWeather("/weather?q=London&units=metric");
   if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error loading weather</p>;
  
   return (
     <div className="flex flex-col bg-gray-200 h-screen m-3 rounded-lg ">
