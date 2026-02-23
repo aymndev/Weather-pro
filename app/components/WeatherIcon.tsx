@@ -1,4 +1,7 @@
 import WeatherIcon from "./WeatherIcon";
+interface Props {
+    data: any;
+  }
 export default function WeatherCard({ weather }: any) {
     if (!weather) return <p>Loading...</p>;
     const icon = weather?.weather?.[0]?.icon;
@@ -16,13 +19,15 @@ export default function WeatherCard({ weather }: any) {
                         <p className="text-xl pt-2">{Math.round(weather?.main?.temp)} °C</p>
 
                         {/*<img className="h-10 w-10 ml-10 mb-6" src="/soleil.png" height={1} width={40} />*/}
-                        <WeatherIcon icon={icon} />
+                        <img className="h-15 w-20 ml-10 " src={`https://openweathermap.org/img/wn/${icon}@2x.png`} />
+                        
                     </div>
                     <div className="flex flex-row gap-20 pl-5">
                         <Stat title="Wind Speed" value={`${weather?.wind?.speed} km/h`} />
                         <Stat title="Humidity" value={`${weather?.main?.humidity} %`} />
                         <Stat title="Pressure" value={`${weather?.main?.pressure} hPa`} />
                         <Stat title="Visibility" value={`${weather?.visibility} m`} />
+
 
 
 

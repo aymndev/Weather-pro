@@ -51,7 +51,7 @@ export default function App() {
       <Menu/>
   
     <div className="flex-1">
-    <NavBar />
+      <NavBar />
       <Outlet/>
     </div>
 

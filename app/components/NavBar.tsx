@@ -6,10 +6,26 @@ import { ImSearch } from "react-icons/im";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import { TiThMenu } from "react-icons/ti";
-import Menu from "~/components/Menu";
+interface Props {
+    setCity: (city: string) => void;
+    currentCity: string;
+  }
 
-export default  function  NavBar(){
+export default  function  NavBar({ setCity,currentCity }: Props){
     const [input,setInput]=useState("");
+    function handleSearch(){
+        const trimmed=input.trim();
+        if(trimmed){
+            setCity(trimmed);
+            setInput("");
+        }
+        if (trimmed.toLowerCase() === currentCity.toLowerCase()) return;
+
+        setCity(trimmed);
+        setInput("")
+
+        
+    }
     
   return (
     <div className='flex justify-between bg-gray-200 w-full rounded-lg p-2 ml-3 pr-55'>
@@ -26,7 +42,7 @@ export default  function  NavBar(){
             className='w-full bg-white rounded-l-lg p-3 pr-12 focus:outline-none'
             
             />
-            <button className='bg-white h-12 w-10 flex  items-center justify-center rounded-r-lg pr-5'>
+            <button  onClick={handleSearch} className='bg-white h-12 w-10 flex  items-center justify-center rounded-r-lg pr-5'>
                 <ImSearch size={20} />
             </button>
             <div className='flex justify-center items-center gap-5 ml-5 '>
